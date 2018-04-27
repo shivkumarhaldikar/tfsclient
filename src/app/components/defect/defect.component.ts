@@ -1,6 +1,6 @@
 import { Component, OnInit, NgModule, AfterViewChecked } from '@angular/core';
 import { TfsService } from '../../services/tfs.service';
-import { Defect } from '../../modules/defect.module';
+import { Defect } from '../../models/defect.model';
 
 @Component({
   selector: 'app-defect',

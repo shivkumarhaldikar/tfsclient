@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
-import { Defect } from '../modules/defect.module';
+import { Defect } from '../models/defect.model';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 
