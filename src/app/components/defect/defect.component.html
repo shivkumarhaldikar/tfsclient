@@ -1,0 +1,54 @@
+<form ngNativeValidate #searchForm='ngForm' (ngSubmit) = 'search(searchForm)'>
+  <div class="row">
+    <div class="col-xs-2">
+     <div class="input-group">
+          <span class="input-group-addon">Version</span>
+          <input id="ver" type="text" class="form-control" name="ver" placeholder="e.g 2.18" ngModel>
+      </div>
+    </div>
+    <div class="col-xs-2">
+      <div class="input-group">
+          <span class="input-group-addon">State</span>
+          <select id="state" name='state' class="form-control" ngModel>
+            <option selected=true></option>
+            <option>Active</option>
+            <option>Closed</option>
+            <option>Proposed</option>
+            <option>Resolved</option>
+          </select>
+      </div>
+      </div>
+      <div class="col-xs-4"> <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> Search</button>
+      </div>
+  </div>
+</form>
+<br />
+<div class="table-responsive" *ngIf="show">
+<table class="table table-striped">
+      <thead>
+      <tr>
+          <th class="other">ID</th>
+          <th class="text">Title</th>
+          <th class="name">Assigned To</th>
+          <th class="other">Priority</th>
+          <th class="other">State</th>
+          <th class="other">Version</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let d of defects | paginate: { itemsPerPage: 8, currentPage: p }; let i = index">
+          <td class="other textother">{{d.ID}}</td>
+          <td class="text textother">{{d.Title}}</td>
+          <td class="name textother">{{d.AssignedTo}}</td>
+          <td class="other textother">{{d.Priority}}</td>
+          <td class="other textother">{{d.State}}</td>
+          <td class="other textother">{{d.Version}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="paging">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+  </div>
+
+

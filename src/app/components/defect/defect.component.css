@@ -1,0 +1,69 @@
+
+tbody::-webkit-scrollbar {
+  width: 0.4em;
+  margin-right: 15px;
+}
+
+tbody::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+tbody::-webkit-scrollbar-thumb {
+background-color: darkgrey;
+outline: 1px solid slategrey;
+}
+
+table {
+  width: 100%;
+}
+
+thead, tbody, tr, td, th { display: block; }
+
+tr:after {
+  content: ' ';
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+thead th {
+  /* height: 30px; */
+
+  /*text-align: left;*/
+}
+
+tbody {
+  height: 50%;
+}
+
+thead {
+  /* fallback */
+}
+
+.paging {
+  margin-left: -3%;
+}
+
+tbody td, thead th {
+   float: left;
+}
+
+.other {
+  width: 10%;
+  float: left;
+}
+
+.name {
+  width: 15%;
+  float: left;
+}
+
+.text {
+  width: 45%;
+}
+
+.textother {
+  font-size: 0.9em;
+  font-style: oblique;
+  /* color: green; */
+}
